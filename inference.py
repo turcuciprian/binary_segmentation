@@ -1,0 +1,1 @@
+# INFERENCE - load the pretrained model and use it with images that where not used for training (images from google images, from phone camera..etc)
