@@ -3,3 +3,5 @@
 *.jpeg
 *.bmp
 *.psd
+__pycache__
+models
