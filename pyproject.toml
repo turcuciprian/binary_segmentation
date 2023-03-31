@@ -14,6 +14,7 @@ fastcore = "^1.5.29"
 wwf = "^0.0.16"
 ipykernel = "^6.22.0"
 pillow = "^9.4.0"
+ipywidgets = "^8.0.6"
 
 
 [tool.poetry.group.dev.dependencies]

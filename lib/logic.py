@@ -59,3 +59,14 @@ def main_logic():
 
     learn = unet_learner(dls, resnet34)
     return learn
+
+def get_predict_image(file,learn):
+    dl = learn.dls.test_dl(file)
+    preds = learn.get_preds(dl=dl)
+    pred_1 = preds[0][0]
+    pred_arx = pred_1.argmax(dim=0)
+    pred_arx = pred_arx.numpy()
+    rescaled = (255.0 / pred_arx.max() *
+                (pred_arx - pred_arx.min())).astype(np.uint8)
+    im = Image.fromarray(rescaled)
+    return im
