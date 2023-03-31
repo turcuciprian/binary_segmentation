@@ -13,6 +13,7 @@ fastai = "^2.7.12"
 fastcore = "^1.5.29"
 wwf = "^0.0.16"
 ipykernel = "^6.22.0"
+pillow = "^9.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
