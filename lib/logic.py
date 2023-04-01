@@ -4,7 +4,7 @@ import os
 
 def get_msk(fn, p2c):
     # "Grab a mask from a `filename` and adjust the pixels based on `pix2class`"
-    fn = path/''/f'GT_png'/f'{fn.stem}_mask{fn.suffix}'
+    fn = path/''/f'GT_png'/f'{fn.stem}_mask.png'
     msk = np.array(PILMask.create(fn))
     mx = np.max(msk)
     for i, val in enumerate(p2c):
