@@ -21,4 +21,4 @@ Witouth complying to these rules, the dataset will not train:
 
 I made a dataset with cars where the car wheels are marked with rectangles
 you can download the dataset from my google drive here:
-[https://drive.google.com/drive/folders/1h6k5jFlZd_dZ0-adYmdNdDAK14mc7hrB?usp=sharing] (https://drive.google.com/drive/folders/1h6k5jFlZd_dZ0-adYmdNdDAK14mc7hrB?usp=sharing "Image binary segmentation dataset example")
+(https://drive.google.com/drive/folders/1h6k5jFlZd_dZ0-adYmdNdDAK14mc7hrB?usp=sharing "Image binary segmentation dataset example")
