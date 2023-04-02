@@ -34,7 +34,7 @@ https://drive.google.com/drive/folders/1h6k5jFlZd_dZ0-adYmdNdDAK14mc7hrB?usp=sha
 7. Start jupyter notebook in the root of the directory from step #2 (this is for inference)
 8. In jupyter notebok open the file withe name starting with ``JUST TRAIN`` and run all cels (This will train your model
 9. after training is done succesfully, open the file that starts with ``INFERENCE`` and change the image name from row #4 where the image path is set
-ex: ``image_path='test/car_test_tesla.jpg'`` becomes `` image_path='test/<your_test_file_name>.jpg'``
+    ex: ``image_path='test/car_test_tesla.jpg'`` becomes `` image_path='test/<your_test_file_name>.jpg'``
 10. Run all cells
 
 After all cells run in the INFERENCE*.pynb file, you should see 2 images: your test file image and a mask for it highlighting where the car weels should be.
