@@ -5,3 +5,7 @@
 *.psd
 __pycache__
 models
+data
+data copy
+test
+.DS_Store

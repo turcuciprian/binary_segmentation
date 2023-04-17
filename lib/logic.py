@@ -1,6 +1,8 @@
 # training the model -- FULL CODE --
 from fastai.vision.all import *
 import os
+import cv2
+
 
 def get_msk(fn, p2c):
     # "Grab a mask from a `filename` and adjust the pixels based on `pix2class`"
@@ -52,8 +54,9 @@ def main_logic():
                    get_items=get_image_files,
                    splitter=RandomSplitter(),
                    get_y=get_y,
-                   item_tfms=Resize(224),
+                   #item_tfms=Resize(224),
                    batch_tfms=[Normalize.from_stats(*imagenet_stats)])
+                   
 
     dls = binary.dataloaders(string_path+'/images', bs=2)
 
@@ -70,3 +73,15 @@ def get_predict_image(file,learn):
                 (pred_arx - pred_arx.min())).astype(np.uint8)
     im = Image.fromarray(rescaled)
     return im
+
+def overlay_mask(image, mask):
+    # Convert the binary mask to a color mask (3 channels)
+    mask_color = cv2.cvtColor(mask, cv2.COLOR_GRAY2)
+
+    # Apply the mask to the image
+    masked_image = cv2.bitwise_and(image, mask_color)
+
+    # Add the mask to the image as a transparent overlay
+    overlay = cv2.addWeighted(image, 0.5, masked_image, 0.9, 0)
+
+    return overlay
