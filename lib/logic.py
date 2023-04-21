@@ -62,26 +62,3 @@ def main_logic():
 
     learn = unet_learner(dls, resnet34)
     return learn
-
-def get_predict_image(file,learn):
-    dl = learn.dls.test_dl(file)
-    preds = learn.get_preds(dl=dl)
-    pred_1 = preds[0][0]
-    pred_arx = pred_1.argmax(dim=0)
-    pred_arx = pred_arx.numpy()
-    rescaled = (255.0 / pred_arx.max() *
-                (pred_arx - pred_arx.min())).astype(np.uint8)
-    im = Image.fromarray(rescaled)
-    return im
-
-def overlay_mask(image, mask):
-    # Convert the binary mask to a color mask (3 channels)
-    mask_color = cv2.cvtColor(mask, cv2.COLOR_BGR2BGRA)
-
-    # Apply the mask to the image
-    masked_image = cv2.bitwise_and(image, mask_color)
-
-    # Add the mask to the image as a transparent overlay
-    overlay = cv2.addWeighted(image, 0.5, masked_image, 0.9, 0)
-
-    return overlay
