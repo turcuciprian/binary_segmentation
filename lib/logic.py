@@ -6,7 +6,7 @@ import cv2
 
 def get_msk(fn, p2c):
     # "Grab a mask from a `filename` and adjust the pixels based on `pix2class`"
-    fn = path/''/f'GT_png'/f'{fn.stem}_mask.png'
+    fn = path/''/f'masks'/f'{fn.stem}_mask.png'
     msk = np.array(PILMask.create(fn))
     mx = np.max(msk)
     for i, val in enumerate(p2c):
@@ -40,7 +40,7 @@ def get_y(o): return get_msk(o, p2c)
 string_path = './data/'
 path = Path(string_path)
     
-lbl_names = sorted(get_image_files(string_path+'/GT_png'))
+lbl_names = sorted(get_image_files(string_path+'/masks'))
 fnames = sorted(get_image_files(string_path+'/images'))
 
 p2c = n_codes(lbl_names)
