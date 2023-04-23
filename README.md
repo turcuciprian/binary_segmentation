@@ -8,7 +8,7 @@ Witouth complying to these rules, the dataset will not train:
   * 2 folders:
     * images - for base images
       * these need to be ``jpg`` files , ``mode = sRGB``
-      * masks - for labels
+    * masks - for labels
       * these need to be png files, ``mode=Gray``
       * Name: ``image_original_name + "_mask"+".png"``
 * WxH should be the same on both labels and images dataset files, no specific size constraints
