@@ -13,7 +13,6 @@ def get_msk(fn, p2c):
         msk[msk == p2c[i]] = val
     return PILMask.create(msk)
 
-
 def n_codes(fnames, is_partial=True):
     # "Gather the codes from a list of `fnames`"
     vals = set()
