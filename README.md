@@ -10,7 +10,7 @@ Witouth complying to these rules, the dataset will not train:
       * these need to be ``jpg`` files , ``mode = sRGB``
     * masks - for labels
       * these need to be png files, ``mode=Gray``
-      * Name: ``image_original_name + "_mask"+".png"``
+      * Name: ``image_original_name + "_mask"+".png"`` (when creating the labels, it's important to take into consideration how you name them)
 * WxH should be the same on both labels and images dataset files, no specific size constraints
 * labels have Image mode ``Gray``
 * images have image mode ``sRGB``
@@ -29,7 +29,7 @@ https://drive.google.com/drive/folders/1h6k5jFlZd_dZ0-adYmdNdDAK14mc7hrB?usp=sha
 2. open the repository directory ``cd <repository_folder_name>``
 3. Download the example dataset from ``Dataset example``
 4. Inside the cloned repository folder copy the data folder from inside the downloaded archive from step #3
-5. create a directory named test and put a test image of a car in it
+5. create a directory named ``test`` and put a test image of a car in it
 6. Initialise poetry with ``poetry shell``
 7. Start jupyter notebook in the root of the directory from step #2 (this is for inference)
 8. In jupyter notebok open the file withe name starting with ``JUST TRAIN`` and run all cels (This will train your model
