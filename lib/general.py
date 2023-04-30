@@ -16,13 +16,15 @@ def get_predict_image(file,learn):
 
 def overlay_mask(image, mask):
     # Convert the binary mask to a color mask (3 channels)
-    mask_color = cv2.cvtColor(mask, cv2.COLOR_BGR2BGRA)
+    mask_color=cv2.cvtColor(mask, cv2.COLOR_RGB2BGR)
 
     # Apply the mask to the image
     masked_image = cv2.bitwise_and(image, mask_color)
 
     # Add the mask to the image as a transparent overlay
-    overlay = cv2.addWeighted(image, 0.25, masked_image, 1, 0)
+    overlay = cv2.addWeighted(image, 0.2, masked_image, 1, 0)
+    
+    # Convert both images to the same color space (in this case, BGR)
 
     return overlay
 

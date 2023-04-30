@@ -57,7 +57,7 @@ def main_logic():
                    batch_tfms=[Normalize.from_stats(*imagenet_stats)])
                    
 
-    dls = binary.dataloaders(string_path+'/images', bs=2)
+    dls = binary.dataloaders(string_path+'/images', bs=1)
 
     learn = unet_learner(dls, resnet34)
     return learn
