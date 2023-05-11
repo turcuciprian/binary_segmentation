@@ -22,7 +22,7 @@ def overlay_mask(image, mask):
     masked_image = cv2.bitwise_and(image, mask_color)
 
     # Add the mask to the image as a transparent overlay
-    overlay = cv2.addWeighted(image, 0.2, masked_image, 1, 0)
+    overlay = cv2.addWeighted(image, 0.3, masked_image, 1, 0)
     
     # Convert both images to the same color space (in this case, BGR)
 
