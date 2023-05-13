@@ -69,3 +69,10 @@ def highlight_areas(pilImage):
 
         # Return the new image
         return out_im
+def resize_images(directory, width):
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg') or filename.endswith('.png'):
+            with Image.open(os.path.join(directory, filename)) as img:
+                height = int((width / float(img.size[0])) * img.size[1])
+                resized_img = img.resize((width, height))
+                resized_img.save(os.path.join(directory, filename))
