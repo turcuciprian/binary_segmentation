@@ -55,7 +55,7 @@ I made a dataset with cars where the car wheels are marked with rectangles
 you can download the dataset from my google drive here:
 https://drive.google.com/drive/folders/1h6k5jFlZd_dZ0-adYmdNdDAK14mc7hrB?usp=sharing
 
-## Usage instructions:
+## Usage instructions: (still needs update)
 
 1. clone the repository
 2. open the repository directory ``cd <repository_folder_name>``
