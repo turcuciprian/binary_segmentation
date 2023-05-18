@@ -2,8 +2,40 @@
 
 With this model and 2 folders with files (images for the files to train on) and GT_png for the masks for those files
 
-Witouth complying to these rules, the dataset will not train:
+## Install prerequisites:
+
+### pyTorch
+This is the main library that's going to be used for training and infering models. You can follow instalation instructions (depending on your operating system) here:
+
+``https://pytorch.org/``
+
+### python *Poetry* package manager
+This is needed to manage all the packages required by the script to train or infer (fastai, pillow... etc.) You can follow the instalation steps (depending on how you want to install it) here:
+
+``https://python-poetry.org/docs/``
+
+
+After installing the above you will be able to install all the packages and run the shell scripts like so:
+
+### Installing packages
+
+inside the project folder:
+
+* Start a poetry enviroment
+  * ``poetry shell``
+* Install packages
+  * ``poetry install``
+* run training
+  * ``python3 train.py`` - make sure the dataset creation rules are properly set up
+* run inference (testing/using the model)
+  * ``python3 inference.py`` - make sure the dataset creation rules are properly set up
+
 ## Custom Dataset creation rules:
+
+Witouth complying to these rules, the dataset will not train:
+
+### Training rules
+
 * the dataset (inside ``data`` folder)
   * 2 folders:
     * images - for base images
