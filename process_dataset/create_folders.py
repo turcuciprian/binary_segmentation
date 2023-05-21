@@ -8,12 +8,13 @@ mask = 'mask'
 noise = 'noise'
 resize = 'resize'
 
+# list of folders to generate
 list_of_folders = [blur, grayscale, mask, noise, resize]
 
 # create base root folders if they don't exist
 os.makedirs(root_before)
 os.makedirs(root_after)
-cycle trought the list of folder names to create    
+# cycle trought the list of folder names to create    
 for folder in list_of_folders:
     # create a child folder for before root path - as a string
     before_full_path = os.path.join(root_before, folder)
