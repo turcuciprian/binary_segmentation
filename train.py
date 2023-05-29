@@ -12,4 +12,4 @@ preds = learn.get_preds()
 
 p = preds[0][0]
 
-learn.save('model_v0.2')
+learn.save('model_v0.3')

@@ -53,7 +53,7 @@ def main_logic():
                    get_items=get_image_files,
                    splitter=RandomSplitter(),
                    get_y=get_y,
-                   item_tfms=Resize(800), # 224 original - for inference, comment this line (leave for training)
+                #    item_tfms=Resize(500), # 224 original - for inference, comment this line (leave for training)
                    batch_tfms=[Normalize.from_stats(*imagenet_stats)])
                    
 
