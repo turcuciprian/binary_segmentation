@@ -6,10 +6,10 @@ from logic import *
 
 learn = main_logic()
 
-learn.fit(35)
+learn.fit(25)
 
 preds = learn.get_preds()
 
 p = preds[0][0]
 
-learn.save('model_v0.1')
+learn.save('model_v0.2')

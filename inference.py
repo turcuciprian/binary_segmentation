@@ -11,7 +11,10 @@ sys.path.append('lib')
 from logic import *
 from general import *
 learn = main_logic()
-learn.load('model_v0.1')
+# learn.load('model_v0.1')
+# learn.load('Neuromania-v.0.5')
+learn.load('model_v0.2')
+# learn.load('neuromania')
 
 # input and output directory for testing
 input_folder = './test/input/'
@@ -35,4 +38,6 @@ for filename in os.listdir(input_folder):
             image = Image.fromarray(overlay)
 
             # Save the image to disk
-            image.save(output_folder+filename)
+        base, ext = os.path.splitext(filename)
+        new_filename = f"{base}_mask{ext}"
+        image.save(os.path.join(output_folder, new_filename))
