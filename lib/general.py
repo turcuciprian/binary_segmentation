@@ -78,3 +78,6 @@ def resize_images(directory, width):
                     height = int((width / float(img.size[0])) * img.size[1])
                     resized_img = img.resize((width, height))
                     resized_img.save(os.path.join(directory, filename))
+                    
+def is_image(filename):
+    return filename.lower().endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif"))

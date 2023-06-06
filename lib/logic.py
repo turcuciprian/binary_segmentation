@@ -6,7 +6,7 @@ import cv2
 
 def get_msk(fn, p2c):
     # "Grab a mask from a `filename` and adjust the pixels based on `pix2class`"
-    fn = path/''/f'masks'/f'{fn.stem}_mask.png'
+    fn = path/''/f'masks'/f'{fn.stem}.png'
     msk = np.array(PILMask.create(fn))
     mx = np.max(msk)
     for i, val in enumerate(p2c):
@@ -44,7 +44,7 @@ fnames = sorted(get_image_files(string_path+'/images'))
 
 p2c = n_codes(lbl_names)
 
-def main_logic():
+def main_logic(training=True):
     img_fn = fnames[2]
     im = PILImage.create(fnames[0])
     msk = PILMask.create(lbl_names[0])
@@ -53,7 +53,7 @@ def main_logic():
                    get_items=get_image_files,
                    splitter=RandomSplitter(),
                    get_y=get_y,
-                #    item_tfms=Resize(500), # 224 original - for inference, comment this line (leave for training)
+                   item_tfms= Resize(500) if training == True else None, # 224 original - for inference, comment this line (leave for training)
                    batch_tfms=[Normalize.from_stats(*imagenet_stats)])
                    
 
