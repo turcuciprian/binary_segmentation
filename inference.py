@@ -13,7 +13,7 @@ from general import *
 learn = main_logic(False)
 # learn.load('trained_car_Wheels2')
 # learn.load('Neuromania-v.0.5')
-learn.load('model_v0.4')
+learn.load('model')
 # learn.load('neuromania')
 
 # input and output directory for testing
