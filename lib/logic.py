@@ -53,7 +53,7 @@ def main_logic(training=True):
                    get_items=get_image_files,
                    splitter=RandomSplitter(),
                    get_y=get_y,
-                   item_tfms= Resize(500) if training == True else None, # 224 original - for inference, comment this line (leave for training)
+                   item_tfms= Resize(500) if training == True else None, # 224 original 
                    batch_tfms=[Normalize.from_stats(*imagenet_stats)])
                    
 
